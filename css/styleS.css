@@ -1,0 +1,93 @@
+body{
+	margin:0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #FEF8E0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.login-page .box{
+	position: absolute;
+	left: 50%;
+	top: 60%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	width: 315px;
+	z-index: 2;
+}
+
+form {
+	padding-bottom: 20px;
+}
+
+.login-page .form-head img{
+text-align: left;
+width: 70%;
+
+}
+
+.login-page .box .form-body{
+display: flex;
+flex-direction: column;
+
+}
+
+.form-body label {
+	margin: 0px;
+	padding: 5px 20px;
+	font-size: 20px;
+	color:#A24F0E;
+	width: 100%;
+	font-weight: bold;
+}
+.login-page .box .form-body input{
+height: 40px;
+border:1px solid #E9D2B0;
+width: 100%;
+background-color: #E9D2B0;
+border-radius: 50px;
+text-align: left;
+color:#A24F0E;
+padding: 20px 20px;
+transition:box-shadow .5s ease;
+font-size: 20px;
+padding-top: 20px;
+}
+.login-page .box .form-body input:focus{
+	box-shadow: 0px 0px 10px black;
+}
+.login-page .box .form-body input::placeholder{
+	color:white;
+	}
+	.login-page .box .form-footer {
+		text-align: center;
+		color: #A24F0E;
+		width: 100%;
+		padding-top: 10px;
+	}
+.login-page .box .form-footer input{
+	height: 40px;
+	border-radius: 50px;
+	padding: 0px 80px;
+	color:#ffffff;
+	background-color: green;
+	border:none;
+	cursor: pointer;
+	transition:box-shadow .5s ease;
+	font-size: 20px;
+}
+.login-page .box .form-footer button:hover{
+	box-shadow: 0px 0px 10px black;
+}
+
+.login-page .box .form-footer a{
+	text-decoration: none;
+	color:#A24F0E;
+	
+}
+
+
