@@ -48,7 +48,7 @@ function login($conn, $post_user, $post_password){
         $_SESSION['user_email'] = $results['email'];
         $_SESSION['user_tel'] = $results['tel'];
         $_SESSION['user_nombre'] = $results['nombre'];
-				header('Location: /DanaApp20/profile.php');
+				header('Location: /DanaApp/profile.php');
 			} else{
 				$message = 'Lo sentimos, los datos ingresados no son correctos';
 			}
@@ -99,7 +99,7 @@ function signup($conn, $post_nom, $post_us, $post_tel, $post_em, $post_pass){
 
       //Condicion para mostrar mensaje de éxito/error de la operación!
 			if ($stmt->execute()) {
-				header('Location: /DanaApp20/index.php');
+				header('Location: /DanaApp/index.php');
 			} else{
 				$message = 'Disculpa, hubo un problema creando tu usuario';
 			}
@@ -124,7 +124,7 @@ function bd_registro_4($conn, $nombre, $nombre1, $nombre2, $nombre3){
 
       //Condicion para mostrar mensaje de éxito/error de la operación!
 			if ($stmt->execute()) {
-				header('Location: /DanaApp20/profile.php');
+				header('Location: /DanaApp/profile.php');
 			} else {
 
 				$message = 'Disculpa, hubo un problema registrando tu direccion <a href="profile.php">Volver al inicio</a>';
@@ -140,19 +140,22 @@ function consulta_tabla_4_col($conn, $sql) {
     $sentencia->bindParam(':user_id', $_SESSION['user_id']);
     $sentencia->execute();
     while ($fila = $sentencia->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
-      echo '<tr>
-          <td>'.$contador.'</td>
-					<td>'.$fila[1].'</td>
-					<td>'.$fila[2].'</td>
-					<td> '.$fila[3].'</td>
-		      <td>'.$fila[4].'</td>
-          <td><form method="POST"><input type="submit" name="edit" value="Editar"></form></td>
-          <td><form method="POST"><input type="submit" name="erase" value="Eliminar"><input type="text" style="visibility: hidden"  name="ident" value=" ' . $fila[0] . '"></form></td>
-				</tr>';
+      echo '
+					<label>Nombre: '.$fila[1].'</label>
+					<label>Barrio: '.$fila[2].'</label>
+					<label>Dirección: '.$fila[3].'</label>
+		      <label>Observaciones: '.$fila[4].'</label>
+
+         <form method="POST"><input class="edit" type="submit" name="edit" value="Editar"></form>
+         <form method="POST"><input class="erase" type="submit" name="erase" value="Eliminar"><input type="hidden" name="ident" value=" ' . $fila[0] . '"></form>
+				';
+
       $contador = $contador + 1;
     }
+
     $sentencia = null;
   }
+
   catch (PDOException $e) {
     echo $e->getMessage();
   }
