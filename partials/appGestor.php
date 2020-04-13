@@ -23,6 +23,17 @@ function bd_conexion($server, $username, $password, $database){
   return $conn;
 }
 
+//Función para conexión a la base de datos mediante sqli
+function conexion2($dbHost, $dbUsername, $dbPassword, $dbName){
+//Creamos una conexion y seleccionamos la db
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+if ($db->connect_error) {
+    die("No pudimos conectar a tu base de datos: " . $db->connect_error);
+}
+  return $db;
+}
+
 //Funcion para loguear usuarios
 function login($conn, $post_user, $post_password){
   $message = "";
