@@ -1,6 +1,6 @@
 <?php
 if(!isset($_REQUEST['id'])){
-    header("Location: /DanaApp20/shop.php");
+    header("Location: /DanaApp/shop.php");
 }
 ?>
 <!DOCTYPE html>
