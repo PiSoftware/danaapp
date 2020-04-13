@@ -10,7 +10,7 @@ $cart = new Cart;
 
 // redirect to home if cart is empty
 if($cart->total_items() <= 0){
-    header("Location: /DanaApp20/shop.php");
+    header("Location: /DanaApp/shop.php");
 }
 
 // get customer details by session customer ID
