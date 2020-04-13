@@ -42,6 +42,7 @@ if(array_key_exists('logout',$_POST)){
               <div>
                 <p>¿Deseas registrar tu direccion de entrega? prueba a <a href="direccionN.php">registrar direccion</a></p>
                  <p>¿Deseas revisar tus <a href="direccionesG.php">direcciones guardadas</a>?</p>
+               <p>¿Deseas <a href="shop.php">ordenar</a>?</p>
               </div>
 
            </div>
