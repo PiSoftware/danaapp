@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'partials/appGestor.php';
 // include database conection function (de la librería appGestor)
 $conexion = conexion2('localhost','root','','danaapp');
