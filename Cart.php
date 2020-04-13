@@ -1,5 +1,5 @@
 <?php
-class Cart {
+class Cart { session_start();
     protected $cart_contents = array();
 
     public function __construct(){
