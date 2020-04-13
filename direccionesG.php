@@ -10,34 +10,46 @@
 		$records->execute();
   }
 ?>
+
 <html>
 <head>
 	<title>Dana app</title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/styleD.css">
   <link rel=”shortcut icon” type=”image/png” href=”img/icono.png” />
 </head>
 
 <body>
 
-  <h1>Direcciones Guardadas</h1>
+<section class="login-page">
+             <div class="form-head">
+              <img src="img/icono_2.png">   
+              </div>
+    
+     <form class="" action="index.php" method="post">
 
-<table>
-<tr>
-  <td><strong>id</strong></td>
-  <td><strong>Nombre</strong></td>
-  <td><strong>Barrio</strong></td>
-  <td><strong>Direccion</strong></td>
-  <td><strong>Extra</strong></td>
-</tr>
 
-<?php
-consulta_tabla_4_col($conn, 'SELECT id, nombre, barrio, direccion, extra FROM direcciones WHERE user_id = :user_id');
-?>
-</table>
+           <div class="form-body">
 
-<p>Estas listo? <a href="profile.php">volver al perfil</a></p>
+                  <?php
+                  consulta_tabla_4_col($conn, 'SELECT id, nombre, barrio, direccion, extra FROM direcciones WHERE user_id = :user_id');
+                  ?>
+
+           </div>
+
+           <div class="form-footer">
+              <div>
+                <p>¿Estas Listo?
+                  <a href="profile.php">Volver al Perfil</a></p>
+              </div>
+           </div>
+
+
+     </form>
+
+</section>
+
 </body>
 
 </html>
